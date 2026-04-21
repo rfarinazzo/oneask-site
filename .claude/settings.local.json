@@ -25,7 +25,18 @@
       "Bash(curl -sL \"https://lirp.cdn-website.com/1a06948f/dms3rep/multi/opt/highlights-1920w.png\" -o blog-highlights.png)",
       "Bash(npm run *)",
       "Bash(git init *)",
-      "Bash(git add *)"
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(gh auth *)",
+      "Bash(gh repo *)",
+      "Bash(git remote *)",
+      "Bash(git push *)",
+      "mcp__Claude_Preview__preview_start",
+      "mcp__Claude_in_Chrome__tabs_context_mcp",
+      "WebFetch(domain:admin.oneask.app)",
+      "WebFetch(domain:oneask.app)",
+      "Bash(curl -sL \"https://www.oneask.co.uk\")",
+      "Bash(curl -sL \"https://irp-cdn.multiscreensite.com/1a06948f/site_favicon_16_1579484281549.ico\" -o /c/Dev/oneask-site/public/favicon.ico)"
     ]
   }
 }

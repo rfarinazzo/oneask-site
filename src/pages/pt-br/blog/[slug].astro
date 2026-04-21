@@ -1,9 +1,9 @@
 ---
 import { getCollection } from 'astro:content';
-import BlogLayout from '../../layouts/BlogLayout.astro';
+import BlogLayout from '../../../layouts/BlogLayout.astro';
 
 export async function getStaticPaths() {
-  const posts = await getCollection('blog-en');
+  const posts = await getCollection('blog-pt');
   return posts.map((post) => ({
     params: { slug: post.slug },
     props: { post },
@@ -18,6 +18,7 @@ const { Content } = await post.render();
   description={post.data.description}
   date={post.data.date}
   image={post.data.image}
+  lang="pt-br"
 >
   <Content />
 </BlogLayout>

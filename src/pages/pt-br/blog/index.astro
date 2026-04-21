@@ -1,29 +1,26 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 
-const posts = await getCollection('blog-en');
+const posts = await getCollection('blog-pt');
 const sorted = posts.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
 ---
 <BaseLayout
+  lang="pt-br"
   title="Blog — OneAsk"
-  description="Tips on audience engagement, event management, and how to run better meetings and live events."
+  description="Dicas sobre engajamento de audiência, gestão de eventos e como ter reuniões e apresentações mais produtivas."
 >
   <section class="max-w-5xl mx-auto px-4 py-16">
     <h1 class="text-4xl font-bold mb-10">Blog</h1>
     <div class="grid md:grid-cols-2 gap-8">
       {sorted.map((post) => (
-        <a href={`/blog/${post.slug}`} class="group block bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+        <a href={`/pt-br/blog/${post.slug}`} class="group block bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow overflow-hidden">
           {post.data.image && (
-            <img
-              src={post.data.image}
-              alt={post.data.title}
-              class="w-full h-48 object-cover"
-            />
+            <img src={post.data.image} alt={post.data.title} class="w-full h-48 object-cover" />
           )}
           <div class="p-6">
             <time class="text-xs text-gray-400">
-              {new Date(post.data.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+              {new Date(post.data.date).toLocaleDateString('pt-BR', { year: 'numeric', month: 'long', day: 'numeric' })}
             </time>
             <h2 class="text-xl font-bold mt-2 mb-2 group-hover:text-indigo-600 transition-colors leading-snug">
               {post.data.title}
