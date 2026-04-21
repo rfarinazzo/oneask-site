@@ -88,9 +88,8 @@ const t = useTranslations(lang);
   function join(e?: Event) {
     if (e) e.preventDefault();
     const code = (document.getElementById('event-code') as HTMLInputElement)?.value?.trim();
-    if (code) {
-      window.location.href = `https://admin.oneask.app/join/${code}`;
-    }
+    if (!code) return;
+    window.open('https://oneask.app/e/' + code, '_blank');
   }
   (window as any).join = join;
 </script>
