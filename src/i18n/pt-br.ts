@@ -19,7 +19,7 @@ export const ptBr = {
     cta: 'Crie seu evento de graça',
     formPlaceholder: 'Digite o código do evento',
     formButton: 'Entrar',
-    signedUp: 'pessoas se cadastraram na última semana',
+    signedUp: 'pessoas participaram de um evento nas últimas 24 horas',
   },
   // Features
   features: {

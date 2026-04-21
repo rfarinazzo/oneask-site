@@ -19,7 +19,7 @@ export const en = {
     cta: 'Get started for free',
     formPlaceholder: 'Enter event code',
     formButton: 'Join',
-    signedUp: 'people signed up in the last week',
+    signedUp: 'people joined an event in the last 24 hours',
   },
   // Features
   features: {

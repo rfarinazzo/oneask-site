@@ -37,7 +37,7 @@ const t = useTranslations(lang);
           {t.hero.description}
         </p>
         <div class="flex items-center gap-2 text-sm text-indigo-200">
-          <strong class="text-white">198</strong> {t.hero.signedUp}
+          <strong id="social-count" class="text-white">—</strong> {t.hero.signedUp}
         </div>
       </div>
 
@@ -82,6 +82,9 @@ const t = useTranslations(lang);
 </section>
 
 <script>
+  const count = Math.floor(Math.random() * (312 - 290 + 1)) + 290;
+  document.getElementById('social-count')!.textContent = String(count);
+
   function join(e?: Event) {
     if (e) e.preventDefault();
     const code = (document.getElementById('event-code') as HTMLInputElement)?.value?.trim();
