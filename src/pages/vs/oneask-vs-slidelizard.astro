@@ -1,0 +1,29 @@
+---
+import ComparisonLayout from '../../components/ComparisonLayout.astro';
+---
+<ComparisonLayout
+  competitor="SlideLizard"
+  title="OneAsk vs SlideLizard — Comparison | OneAsk"
+  description="Thinking of trying something different than SlideLizard? Compare features. OneAsk requires no downloads, has no user limit, and is 100% free."
+  headline="OneAsk vs SlideLizard"
+  subheadline="Are you thinking of trying something different than SlideLizard?"
+  intro="OneAsk requires no downloads or installation and is 100% free with no user limit. If Q&A and audience participation are your primary needs, OneAsk offers a simpler, more focused solution."
+  features={[
+    { feature: 'Crowdsource questions', oneask: '✅ Free', competitor: 'Paid' },
+    { feature: 'Question moderation', oneask: '✅ Free', competitor: 'Paid' },
+    { feature: 'Unlimited participants', oneask: true, competitor: false },
+    { feature: 'YouTube Live integration', oneask: '✅ Free', competitor: '—' },
+    { feature: 'Zoom integration', oneask: '✅ Free', competitor: '—' },
+    { feature: 'Multiple rooms', oneask: '✅ Free', competitor: 'Paid' },
+    { feature: 'Polls', oneask: 'Coming soon', competitor: true },
+    { feature: 'Event analytics', oneask: 'Coming soon', competitor: true },
+    { feature: 'Custom themes / logo', oneask: '$9.99/mo', competitor: 'Paid' },
+    { feature: 'Event collaborators', oneask: '—', competitor: true },
+    { feature: 'No download required', oneask: true, competitor: false },
+  ]}
+  testimonialQuote="OneAsk is sensational. We were able to filter only the proper questions to increase the quality of the event's content. We scaled to +1,700 people."
+  testimonialAuthor="Marcell Almeida"
+  testimonialRole="Founder, Product Camp"
+  testimonialPhoto="/images/testimonial-pcamp.jpg"
+  ctaText="Get started now"
+/>

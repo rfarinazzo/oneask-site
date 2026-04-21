@@ -1,0 +1,69 @@
+---
+import type { Lang } from '../i18n/index';
+import { useTranslations } from '../i18n/index';
+
+interface Props {
+  lang?: Lang;
+}
+const { lang = 'en' } = Astro.props;
+const t = useTranslations(lang);
+---
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
+
+    <!-- Feature 1: Voting -->
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <span class="inline-block text-indigo-600 text-sm font-semibold uppercase tracking-wider mb-3">
+          {t.features.section1.tag}
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-bold mb-5">{t.features.section1.headline}</h2>
+        <p class="text-gray-600 text-lg leading-relaxed">{t.features.section1.body}</p>
+      </div>
+      <div class="rounded-2xl overflow-hidden shadow-xl">
+        <img
+          src="/images/one-ask-highlight-question.png"
+          alt="OneAsk highlight question feature"
+          class="w-full h-auto"
+        />
+      </div>
+    </div>
+
+    <!-- Feature 2: Anonymous questions -->
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div class="order-2 md:order-1 rounded-2xl overflow-hidden shadow-xl">
+        <img
+          src="/images/oneask-screenshot.png"
+          alt="OneAsk audience participation"
+          class="w-full h-auto"
+        />
+      </div>
+      <div class="order-1 md:order-2">
+        <span class="inline-block text-indigo-600 text-sm font-semibold uppercase tracking-wider mb-3">
+          {t.features.section2.tag}
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-bold mb-5">{t.features.section2.headline}</h2>
+        <p class="text-gray-600 text-lg leading-relaxed">{t.features.section2.body}</p>
+      </div>
+    </div>
+
+    <!-- Feature 3: Integration -->
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <span class="inline-block text-indigo-600 text-sm font-semibold uppercase tracking-wider mb-3">
+          {t.features.section3.tag}
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-bold mb-5">{t.features.section3.headline}</h2>
+        <p class="text-gray-600 text-lg leading-relaxed">{t.features.section3.body}</p>
+      </div>
+      <div class="rounded-2xl overflow-hidden shadow-xl">
+        <img
+          src="/images/oneask-youtube.png"
+          alt="OneAsk YouTube and Zoom integration"
+          class="w-full h-auto"
+        />
+      </div>
+    </div>
+
+  </div>
+</section>

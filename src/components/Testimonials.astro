@@ -1,0 +1,55 @@
+---
+import type { Lang } from '../i18n/index';
+import { useTranslations } from '../i18n/index';
+
+interface Props {
+  lang?: Lang;
+}
+const { lang = 'en' } = Astro.props;
+const t = useTranslations(lang);
+
+const photos = [
+  '/images/testimonial-ndd.jpg',
+  '/images/testimonial-pcamp.jpg',
+  '/images/testimonial-involves.png',
+];
+
+const logos = [
+  { src: '/images/ndd-logo.png', alt: 'NDD' },
+  { src: '/images/pcamp-logo.png', alt: 'Product Camp' },
+  { src: '/images/involves-logo.png', alt: 'Involves' },
+];
+---
+<section class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl sm:text-4xl font-bold text-center mb-14">{t.testimonials.headline}</h2>
+
+    <!-- Client logos -->
+    <div class="flex flex-wrap justify-center items-center gap-10 mb-16 opacity-60">
+      <img src="/images/pcamp-logo.png" alt="Product Camp" class="h-10 w-auto grayscale" />
+      <img src="/images/involves-logo.png" alt="Involves" class="h-8 w-auto grayscale" />
+      <img src="/images/twig-logo.png" alt="Twig" class="h-8 w-auto grayscale" />
+      <img src="/images/ndd-logo.png" alt="NDD" class="h-8 w-auto grayscale" />
+    </div>
+
+    <!-- Testimonial cards -->
+    <div class="grid md:grid-cols-3 gap-8">
+      {t.testimonials.items.map((item, i) => (
+        <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 flex flex-col gap-5">
+          <p class="text-gray-700 leading-relaxed text-base">&ldquo;{item.quote}&rdquo;</p>
+          <div class="flex items-center gap-4 mt-auto pt-4 border-t border-gray-100">
+            <img
+              src={photos[i]}
+              alt={item.author}
+              class="w-12 h-12 rounded-full object-cover"
+            />
+            <div>
+              <p class="font-semibold text-gray-900 text-sm">{item.author}</p>
+              <p class="text-gray-500 text-xs">{item.role}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

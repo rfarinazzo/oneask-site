@@ -1,0 +1,29 @@
+---
+import ComparisonLayout from '../../components/ComparisonLayout.astro';
+---
+<ComparisonLayout
+  competitor="Mentimeter"
+  title="OneAsk or Mentimeter? Find out which one is better | OneAsk"
+  description="Comparing OneAsk vs Mentimeter? OneAsk is 100% free and easier to use. See how they stack up on pricing and features."
+  headline="OneAsk or Mentimeter? Find out which one is better"
+  subheadline="OneAsk is 100% free and easier to use than other tools."
+  intro="Mentimeter and OneAsk focus on different problems. Mentimeter excels at presentations and quizzes. OneAsk specialises in Q&A — collecting, upvoting, and prioritising audience questions. If Q&A is your core need, OneAsk gives you everything for free."
+  features={[
+    { feature: 'Crowdsource questions', oneask: '✅ Free', competitor: 'Paid' },
+    { feature: 'Question moderation', oneask: '✅ Free', competitor: 'Paid' },
+    { feature: 'Multiple rooms', oneask: '✅ Free', competitor: 'Paid' },
+    { feature: 'YouTube / Zoom integration', oneask: '✅ Free', competitor: '—' },
+    { feature: 'Google SSO', oneask: '✅ Free', competitor: 'Paid' },
+    { feature: 'Unlimited participants', oneask: true, competitor: false },
+    { feature: 'Quizzes', oneask: 'Coming soon', competitor: true },
+    { feature: 'Event analytics', oneask: 'Coming soon', competitor: true },
+    { feature: 'GDPR compliance', oneask: '—', competitor: true },
+    { feature: '30+ presentation themes', oneask: '—', competitor: true },
+    { feature: 'Annual cost (per user)', oneask: '$0', competitor: '$119.88–$299.88' },
+  ]}
+  testimonialQuote="OneAsk is helping us collect and prioritise questions in our Product Review ceremony across distributed teams."
+  testimonialAuthor="Involves Team"
+  testimonialRole="Head of Product, Involves"
+  testimonialPhoto="/images/testimonial-involves.png"
+  ctaText="Get started now"
+/>

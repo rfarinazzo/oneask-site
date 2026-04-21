@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.oneask.co.uk)",
+      "Bash(npm --version)",
+      "Bash(npm create *)",
+      "Bash(npm install *)",
+      "Bash(npx astro *)",
+      "Bash(npx --yes astro@4 add tailwind mdx --yes)",
+      "Bash(curl -sL \"https://irp-cdn.multiscreensite.com/1a06948f/dms3rep/multi/desktop/oneask-flat-logo.jpg\" -o oneask-flat-logo.jpg)",
+      "Bash(curl -sL \"https://lirp.cdn-website.com/1a06948f/dms3rep/multi/opt/logo-white-202w.png\" -o logo-white.png)",
+      "Bash(curl -sL \"https://lirp.cdn-website.com/1a06948f/dms3rep/multi/opt/pcamp-338w.png\" -o pcamp-logo.png)",
+      "Bash(curl -sL \"https://lirp.cdn-website.com/1a06948f/dms3rep/multi/opt/involves-232w.png\" -o involves-logo.png)",
+      "Bash(curl -sL \"https://lirp.cdn-website.com/1a06948f/dms3rep/multi/opt/twig-gray-127w.png\" -o twig-logo.png)",
+      "Bash(curl -sL \"https://lirp.cdn-website.com/1a06948f/dms3rep/multi/opt/NDD-d455388e-180w.png\" -o ndd-logo.png)",
+      "Bash(curl -sL \"https://lirp.cdn-website.com/1a06948f/dms3rep/multi/opt/one-ask-highlight-question-358h.png\" -o one-ask-highlight-question.png)",
+      "Bash(curl -sL \"https://lirp.cdn-website.com/1a06948f/dms3rep/multi/opt/oneask-youtube-933d0bb2-684w.png\" -o oneask-youtube.png)",
+      "Bash(curl -sL \"https://lirp.cdn-website.com/1a06948f/dms3rep/multi/opt/X-370h.png\" -o oneask-screenshot.png)",
+      "Bash(curl -sL \"https://lirp.cdn-website.com/1a06948f/dms3rep/multi/opt/_MG_7702-d9be6c43-fadfd6e5-47f2b055-1920w.jpg\" -o testimonial-ndd.jpg)",
+      "Bash(curl -sL \"https://lirp.cdn-website.com/1a06948f/dms3rep/multi/opt/marcell-almeida-pcamp-depoimento-eede5292-1920w.jpg\" -o testimonial-pcamp.jpg)",
+      "Bash(curl -sL \"https://lirp.cdn-website.com/1a06948f/dms3rep/multi/opt/Screen%2BShot%2B2020-02-18%2Bat%2B23.10.53-1920w.png\" -o testimonial-involves.png)",
+      "Bash(curl -sL \"https://lirp.cdn-website.com/1a06948f/dms3rep/multi/opt/reuniao_online_presencial-1920w.jpg\" -o blog-reuniao-online.jpg)",
+      "Bash(curl -sL \"https://lirp.cdn-website.com/1a06948f/dms3rep/multi/opt/chat_order_en-1920w.png\" -o blog-chat-order.png)",
+      "Bash(curl -sL \"https://lirp.cdn-website.com/1a06948f/dms3rep/multi/opt/unique_source_of_questions-1920w.png\" -o blog-unique-source.png)",
+      "Bash(curl -sL \"https://lirp.cdn-website.com/1a06948f/dms3rep/multi/opt/highlights-1920w.png\" -o blog-highlights.png)",
+      "Bash(npm run *)",
+      "Bash(git init *)",
+      "Bash(git add *)"
+    ]
+  }
+}

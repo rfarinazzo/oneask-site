@@ -1,0 +1,85 @@
+---
+import type { Lang } from '../i18n/index';
+import { useTranslations } from '../i18n/index';
+
+interface Props {
+  lang?: Lang;
+}
+const { lang = 'en' } = Astro.props;
+const t = useTranslations(lang);
+---
+<section class="relative bg-gradient-to-br from-indigo-700 via-indigo-600 to-purple-600 text-white overflow-hidden">
+  <!-- Background pattern -->
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute top-0 left-0 w-96 h-96 bg-white rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+    <div class="absolute bottom-0 right-0 w-80 h-80 bg-white rounded-full translate-x-1/4 translate-y-1/4"></div>
+  </div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
+    <div class="max-w-2xl">
+      <!-- Badge -->
+      <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur rounded-full px-4 py-1.5 text-sm font-medium mb-6">
+        <span class="w-2 h-2 rounded-full bg-green-400"></span>
+        {t.hero.badge}
+      </div>
+
+      <!-- Heading -->
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-6">
+        {t.hero.headline}
+      </h1>
+
+      <!-- Description -->
+      <p class="text-lg sm:text-xl text-indigo-100 mb-8 max-w-lg">
+        {t.hero.description}
+      </p>
+
+      <!-- Join Event Form -->
+      <form
+        onsubmit="join(event)"
+        class="flex flex-col sm:flex-row gap-3 mb-6"
+        locale={lang === 'pt-br' ? 'PORTUGUESE' : 'ENGLISH'}
+        id="1925036636"
+      >
+        <input
+          type="text"
+          id="event-code"
+          name="code"
+          placeholder={t.hero.formPlaceholder}
+          class="flex-1 px-5 py-3 rounded-full text-gray-900 text-base font-medium placeholder-gray-400 outline-none focus:ring-2 focus:ring-white/50"
+          autocomplete="off"
+        />
+        <button
+          type="submit"
+          class="px-8 py-3 rounded-full bg-white text-indigo-700 font-bold text-base hover:bg-indigo-50 transition-colors shadow-lg"
+        >
+          {t.hero.formButton}
+        </button>
+      </form>
+
+      <!-- Or CTA -->
+      <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+        <a
+          href="https://admin.oneask.app/signup"
+          class="inline-flex items-center px-8 py-3 rounded-full bg-indigo-900/40 border border-white/30 text-white font-semibold hover:bg-indigo-900/60 transition-colors"
+        >
+          {t.hero.cta}
+        </a>
+        <span class="text-indigo-200 text-sm">
+          <strong class="text-white">198</strong> {t.hero.signedUp}
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  function join(e?: Event) {
+    if (e) e.preventDefault();
+    const code = (document.getElementById('event-code') as HTMLInputElement)?.value?.trim();
+    if (code) {
+      window.location.href = `https://admin.oneask.app/join/${code}`;
+    }
+  }
+  // Expose globally for the form's onsubmit
+  (window as any).join = join;
+</script>

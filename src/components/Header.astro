@@ -1,0 +1,86 @@
+---
+import type { Lang } from '../i18n/index';
+import { useTranslations } from '../i18n/index';
+
+interface Props {
+  lang?: Lang;
+}
+const { lang = 'en' } = Astro.props;
+const t = useTranslations(lang);
+const base = lang === 'pt-br' ? '/pt-br' : '';
+---
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-gray-100 shadow-sm">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+    <!-- Logo -->
+    <a href={`${base}/`} class="flex items-center gap-2 shrink-0">
+      <img src="/images/oneask-flat-logo.jpg" alt="OneAsk" class="h-8 w-auto" />
+    </a>
+
+    <!-- Desktop Nav -->
+    <ul class="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600">
+      <li><a href={`${base}/`} class="hover:text-indigo-600 transition-colors">{t.nav.home}</a></li>
+      <li><a href={`${base}/blog`} class="hover:text-indigo-600 transition-colors">{t.nav.blog}</a></li>
+      <li class="relative group">
+        <button class="flex items-center gap-1 hover:text-indigo-600 transition-colors cursor-pointer">
+          {t.nav.vsOther}
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <ul class="absolute top-full left-0 mt-1 w-64 bg-white rounded-xl shadow-lg border border-gray-100 py-1 hidden group-hover:block z-50">
+          <li><a href="/vs/slido" class="block px-4 py-2 text-sm hover:bg-indigo-50 hover:text-indigo-600">{t.nav.vsSlido}</a></li>
+          <li><a href="/vs/oneask-vs-mentimeter" class="block px-4 py-2 text-sm hover:bg-indigo-50 hover:text-indigo-600">{t.nav.vsMentimeter}</a></li>
+          <li><a href="/vs/oneask-vs-poll-everywhere" class="block px-4 py-2 text-sm hover:bg-indigo-50 hover:text-indigo-600">{t.nav.vsPollEverywhere}</a></li>
+          <li><a href="/vs/oneask-vs-slidelizard" class="block px-4 py-2 text-sm hover:bg-indigo-50 hover:text-indigo-600">{t.nav.vsSlideLizard}</a></li>
+        </ul>
+      </li>
+    </ul>
+
+    <!-- Auth + Mobile toggle -->
+    <div class="flex items-center gap-3">
+      <a href="https://admin.oneask.app" class="hidden sm:inline-flex text-sm font-medium text-gray-600 hover:text-indigo-600 transition-colors">
+        {t.nav.login}
+      </a>
+      <a href="https://admin.oneask.app/signup" class="inline-flex items-center px-4 py-2 rounded-full bg-indigo-600 text-white text-sm font-semibold hover:bg-indigo-700 transition-colors">
+        {t.nav.signup}
+      </a>
+      <!-- Mobile hamburger -->
+      <button id="menu-toggle" class="md:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100" aria-label="Open menu">
+        <svg id="icon-open" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg id="icon-close" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden border-t border-gray-100 bg-white px-4 pb-4">
+    <ul class="flex flex-col gap-1 pt-3 text-sm font-medium text-gray-700">
+      <li><a href={`${base}/`} class="block py-2 hover:text-indigo-600">{t.nav.home}</a></li>
+      <li><a href={`${base}/blog`} class="block py-2 hover:text-indigo-600">{t.nav.blog}</a></li>
+      <li class="pt-1 pb-1 text-xs uppercase tracking-wider text-gray-400">{t.nav.vsOther}</li>
+      <li><a href="/vs/slido" class="block py-2 pl-2 hover:text-indigo-600">{t.nav.vsSlido}</a></li>
+      <li><a href="/vs/oneask-vs-mentimeter" class="block py-2 pl-2 hover:text-indigo-600">{t.nav.vsMentimeter}</a></li>
+      <li><a href="/vs/oneask-vs-poll-everywhere" class="block py-2 pl-2 hover:text-indigo-600">{t.nav.vsPollEverywhere}</a></li>
+      <li><a href="/vs/oneask-vs-slidelizard" class="block py-2 pl-2 hover:text-indigo-600">{t.nav.vsSlideLizard}</a></li>
+      <li class="border-t border-gray-100 mt-2 pt-2">
+        <a href="https://admin.oneask.app" class="block py-2 hover:text-indigo-600">{t.nav.login}</a>
+      </li>
+    </ul>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('icon-open');
+  const iconClose = document.getElementById('icon-close');
+  toggle?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden');
+    iconOpen?.classList.toggle('hidden');
+    iconClose?.classList.toggle('hidden');
+  });
+</script>

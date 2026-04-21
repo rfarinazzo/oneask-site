@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import Features from '../components/Features.astro';
+import Testimonials from '../components/Testimonials.astro';
+import Pricing from '../components/Pricing.astro';
+---
+<BaseLayout lang="en">
+  <!-- Client-side language redirect: if browser prefers Portuguese, go to /pt-br -->
+  <script>
+    (function() {
+      const lang = navigator.language || navigator.languages?.[0] || '';
+      if (/^pt(-BR)?$/i.test(lang) || /^pt$/i.test(lang.split('-')[0])) {
+        window.location.replace('/pt-br');
+      }
+    })();
+  </script>
+  <Hero lang="en" />
+  <Features lang="en" />
+  <Testimonials lang="en" />
+  <Pricing lang="en" />
+</BaseLayout>

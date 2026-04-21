@@ -1,0 +1,57 @@
+---
+import type { Lang } from '../i18n/index';
+import { useTranslations } from '../i18n/index';
+
+interface Props {
+  lang?: Lang;
+}
+const { lang = 'en' } = Astro.props;
+const t = useTranslations(lang);
+---
+<footer class="bg-gray-900 text-gray-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Brand -->
+      <div>
+        <img src="/images/logo-white.png" alt="OneAsk" class="h-8 w-auto mb-4" />
+        <p class="text-sm text-gray-400 max-w-xs">
+          {lang === 'pt-br'
+            ? 'Ferramenta de engajamento de audiência. Gratuita para sempre.'
+            : 'Audience engagement tool. Free forever.'}
+        </p>
+      </div>
+
+      <!-- Compare -->
+      <div>
+        <h3 class="text-white font-semibold mb-3 text-sm uppercase tracking-wider">{t.footer.compare}</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a href="/vs/slido" class="hover:text-white transition-colors">{t.nav.vsSlido}</a></li>
+          <li><a href="/vs/oneask-vs-mentimeter" class="hover:text-white transition-colors">{t.nav.vsMentimeter}</a></li>
+          <li><a href="/vs/oneask-vs-slidelizard" class="hover:text-white transition-colors">{t.nav.vsSlideLizard}</a></li>
+          <li><a href="/vs/oneask-vs-poll-everywhere" class="hover:text-white transition-colors">{t.nav.vsPollEverywhere}</a></li>
+        </ul>
+      </div>
+
+      <!-- Language -->
+      <div>
+        <h3 class="text-white font-semibold mb-3 text-sm uppercase tracking-wider">{t.footer.language}</h3>
+        <ul class="space-y-2 text-sm">
+          <li>
+            <a href="/" class={`hover:text-white transition-colors ${lang === 'en' ? 'text-white font-semibold' : ''}`}>
+              🇬🇧 {t.footer.english}
+            </a>
+          </li>
+          <li>
+            <a href="/pt-br" class={`hover:text-white transition-colors ${lang === 'pt-br' ? 'text-white font-semibold' : ''}`}>
+              🇧🇷 {t.footer.portuguese}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-10 border-t border-gray-800 pt-6 text-center text-xs text-gray-500">
+      {t.footer.copyright}
+    </div>
+  </div>
+</footer>

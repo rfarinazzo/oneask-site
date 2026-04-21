@@ -1,0 +1,44 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import type { Lang } from '../i18n/index';
+
+interface Props {
+  title?: string;
+  description?: string;
+  lang?: Lang;
+  ogImage?: string;
+}
+
+const {
+  title = 'OneAsk — Where There\'s an Audience, There Should Be Participation',
+  description = 'OneAsk is a free audience engagement tool. Collect, upvote and prioritise questions at your events, meetings and live streams.',
+  lang = 'en',
+  ogImage = '/images/oneask-og.jpg',
+} = Astro.props;
+---
+<!DOCTYPE html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/png" href="/images/logo-white.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  </head>
+  <body class="font-sans antialiased bg-white text-gray-900">
+    <Header lang={lang} />
+    <main>
+      <slot />
+    </main>
+    <Footer lang={lang} />
+  </body>
+</html>

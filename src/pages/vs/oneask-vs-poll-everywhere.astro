@@ -1,0 +1,29 @@
+---
+import ComparisonLayout from '../../components/ComparisonLayout.astro';
+---
+<ComparisonLayout
+  competitor="Poll Everywhere"
+  title="OneAsk vs Poll Everywhere — Comparison | OneAsk"
+  description="We want this decision easy for you. Here's a clear comparison between Poll Everywhere and OneAsk on features, pricing, and participant limits."
+  headline="Comparison between Poll Everywhere and OneAsk"
+  subheadline="We want this decision easy for you."
+  intro="We've put together some info that'll help you decide which option is best for your purpose. OneAsk focuses on Q&A with unlimited participants at no cost."
+  features={[
+    { feature: 'Crowdsource questions', oneask: '✅ Free', competitor: 'Free' },
+    { feature: 'Question moderation', oneask: '✅ Free', competitor: 'Paid' },
+    { feature: 'Grading / Ranking', oneask: '—', competitor: 'Paid' },
+    { feature: 'Polls', oneask: 'Coming soon', competitor: 'Free' },
+    { feature: 'Participant limit', oneask: 'Unlimited', competitor: '25–700 (plan-dependent)' },
+    { feature: 'Event analytics', oneask: '—', competitor: 'Free' },
+    { feature: 'Data exports', oneask: 'Upon request', competitor: 'Free' },
+    { feature: 'YouTube / Zoom integration', oneask: '✅ Free', competitor: 'Limited' },
+    { feature: 'GDPR compliance', oneask: '—', competitor: true },
+    { feature: 'Custom themes', oneask: '—', competitor: 'Paid' },
+    { feature: 'Word clouds', oneask: '—', competitor: 'Free' },
+  ]}
+  testimonialQuote="Easy to use, understand, apply, and free. Real-time questions for your event."
+  testimonialAuthor="Patrick Naufel"
+  testimonialRole="UX Coordinator, NDD"
+  testimonialPhoto="/images/testimonial-ndd.jpg"
+  ctaText="Get started now"
+/>
